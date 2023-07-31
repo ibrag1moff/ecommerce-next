@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.navContainer {
+    @apply max-w-[1900px] py-4 px-3 sm:px-[120px] mx-auto;
+}
