@@ -32,9 +32,7 @@ export const useCart = () => {
     return useContext(CartContext);
 };
 
-if (typeof window !== "undefined") {
-    var cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
-}
+var cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
 
 const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const [cartItems, setCartItems] =
