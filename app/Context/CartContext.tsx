@@ -23,7 +23,6 @@ interface CartContext {
     increaseCartQuantity: (id: number) => void;
     decreaseCartQuantity: (id: number) => void;
     removeFromCart: (id: number) => void;
-    cartQuantity: number;
     clearCart: () => void;
 }
 
@@ -44,11 +43,6 @@ const CartContextProvider = ({ children }: CartContextProviderProps) => {
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cartItems));
     }, [cartItems]);
-
-    const cartQuantity = cartItems.reduce(
-        (quantity, item) => item.quantity + quantity,
-        0
-    );
 
     const getItemQuantity = (id: number) => {
         return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -104,7 +98,6 @@ const CartContextProvider = ({ children }: CartContextProviderProps) => {
                 increaseCartQuantity,
                 decreaseCartQuantity,
                 removeFromCart,
-                cartQuantity,
                 clearCart,
             }}
         >
