@@ -12,7 +12,6 @@ import { Product } from "@/types/interfaces";
 export default function Cart() {
     const { cartItems, clearCart } = useCart();
     const { products } = useProduct();
-    console.log(cartItems.length);
 
     return (
         <div>

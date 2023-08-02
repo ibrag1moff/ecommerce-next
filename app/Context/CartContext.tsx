@@ -32,11 +32,10 @@ export const useCart = () => {
     return useContext(CartContext);
 };
 
-var cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
-
 const CartContextProvider = ({ children }: CartContextProviderProps) => {
-    const [cartItems, setCartItems] =
-        useState<CartItem[]>(cartFromLocalStorage);
+    const [cartItems, setCartItems] = useState<CartItem[]>(
+        JSON.parse(localStorage.getItem("cart") || "[]")
+    );
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cartItems));
