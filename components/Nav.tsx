@@ -45,21 +45,23 @@ export default function Nav() {
         setMounted(true);
     }, []);
 
-    window.addEventListener("scroll", () => {
-        setNavActive(false);
-    });
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setNavActive(false);
+        });
 
-    window.addEventListener("click", () => {
-        setNavActive(false);
-    });
+        window.addEventListener("click", () => {
+            setNavActive(false);
+        });
 
-    window.addEventListener("click", () => {
-        setDropDownActive(false);
-    });
+        window.addEventListener("click", () => {
+            setDropDownActive(false);
+        });
 
-    window.addEventListener("scroll", () => {
-        setDropDownActive(false);
-    });
+        window.addEventListener("scroll", () => {
+            setDropDownActive(false);
+        });
+    }, [navActive, dropDownActive]);
 
     return (
         <nav
