@@ -1,9 +1,12 @@
 "use client";
 // react
-import { ReactNode, createContext, useContext } from "react";
-
-// useLocalStorage
-import { useLocalStorage } from "@/app/Hooks/useLocalStorage";
+import {
+    ReactNode,
+    createContext,
+    useContext,
+    useEffect,
+    useState,
+} from "react";
 
 interface CartContextProviderProps {
     children: ReactNode;
@@ -30,8 +33,17 @@ export const useCart = () => {
     return useContext(CartContext);
 };
 
+if (typeof window !== "undefined") {
+    var cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+}
+
 const CartContextProvider = ({ children }: CartContextProviderProps) => {
-    const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("cart", []);
+    const [cartItems, setCartItems] =
+        useState<CartItem[]>(cartFromLocalStorage);
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+    }, [cartItems]);
 
     const cartQuantity = cartItems.reduce(
         (quantity, item) => item.quantity + quantity,

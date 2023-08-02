@@ -1,6 +1,7 @@
 "use client";
 // next
 import { useParams } from "next/navigation";
+import Link from "next/link";
 import Loading from "@/app/loading";
 
 // context
@@ -9,6 +10,7 @@ import { useCart } from "@/app/Context/CartContext";
 
 // icons
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { BsArrowRight } from "react-icons/bs";
 
 export default function ProductDetails() {
     const { id } = useParams();
@@ -39,6 +41,14 @@ export default function ProductDetails() {
 
     return (
         <div className="h-[90vh]">
+            <div className="flex">
+                <Link
+                    href="/products"
+                    className="flex items-center gap-2 bg-black py-2 px-8 m-8 text-white font-semibold rounded-3xl"
+                >
+                    Go Back <BsArrowRight size={20} />
+                </Link>
+            </div>
             <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] ">
                 <div className="flex flex-col items-center justify-center md:flex-row md:justify-between md:gap-36">
                     <img
