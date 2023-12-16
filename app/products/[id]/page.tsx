@@ -49,64 +49,69 @@ export default function ProductDetails() {
                     Go Back <BsArrowRight size={20} />
                 </Link>
             </div>
-<<<<<<< HEAD
             <div className="my-[60px]">
                 <div className="flex flex-col gap-8 items-center justify-center md:flex-row">
-=======
-            <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] mt-16">
-                <div className="flex flex-col items-center justify-center md:flex-row md:justify-between md:gap-36">
->>>>>>> 5b41006cfc3196dfb6fb8290f7a0db84e8cdb7a6
-                    <img
-                        className="w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
-                        src={image}
-                        alt="WatchImg"
-                    />
-                    <div className="flex flex-col items-center gap-4">
-                        <h1 className="text-xl font-bold max-w-[300px] text-center">
-                            {title}
-                        </h1>
-                        <p className="text-gray-600 text-center max-w-[350px] lg:max-w-[500px]">
-                            {description.substring(0, 120)}
-                        </p>
-                        <span className="font-semibold text-2xl">${price}</span>
-                        {quantity == 0 ? (
-                            <button
-                                onClick={() => increaseCartQuantity(newId)}
-                                className="bg-black py-2 px-8 text-white font-semibold"
-                            >
-                                Add to cart
-                            </button>
-                        ) : (
-                            <div className="flex flex-col gap-3 items-center">
-                                <div className="flex items-center gap-3">
+                    <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] mt-16">
+                        <div className="flex flex-col items-center justify-center md:flex-row md:justify-between md:gap-36">
+                            <img
+                                className="w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
+                                src={image}
+                                alt="WatchImg"
+                            />
+                            <div className="flex flex-col items-center gap-4">
+                                <h1 className="text-xl font-bold max-w-[300px] text-center">
+                                    {title}
+                                </h1>
+                                <p className="text-gray-600 text-center max-w-[350px] lg:max-w-[500px]">
+                                    {description.substring(0, 120)}
+                                </p>
+                                <span className="font-semibold text-2xl">
+                                    ${price}
+                                </span>
+                                {quantity == 0 ? (
                                     <button
-                                        className="bg-black text-white p-2"
-                                        onClick={() =>
-                                            decreaseCartQuantity(newId)
-                                        }
-                                    >
-                                        <AiOutlineMinus size={25} />
-                                    </button>
-                                    <span className="font-bold">
-                                        {quantity}
-                                    </span>
-                                    <button
-                                        className="bg-black text-white p-2"
                                         onClick={() =>
                                             increaseCartQuantity(newId)
                                         }
+                                        className="bg-black py-2 px-8 text-white font-semibold"
                                     >
-                                        <AiOutlinePlus size={25} />
+                                        Add to cart
                                     </button>
-                                </div>
-                                <button
-                                    onClick={() => removeFromCart(newId)}
-                                    className="bg-black py-2 px-12 text-white font-semibold"
-                                >
-                                    Remove from cart
-                                </button>
+                                ) : (
+                                    <div className="flex flex-col gap-3 items-center">
+                                        <div className="flex items-center gap-3">
+                                            <button
+                                                className="bg-black text-white p-2"
+                                                onClick={() =>
+                                                    decreaseCartQuantity(newId)
+                                                }
+                                            >
+                                                <AiOutlineMinus size={25} />
+                                            </button>
+                                            <span className="font-bold">
+                                                {quantity}
+                                            </span>
+                                            <button
+                                                className="bg-black text-white p-2"
+                                                onClick={() =>
+                                                    increaseCartQuantity(newId)
+                                                }
+                                            >
+                                                <AiOutlinePlus size={25} />
+                                            </button>
+                                        </div>
+                                        <button
+                                            onClick={() =>
+                                                removeFromCart(newId)
+                                            }
+                                            className="bg-black py-2 px-12 text-white font-semibold"
+                                        >
+                                            Remove from cart
+                                        </button>
+                                    </div>
+                                )}
                             </div>
-                        )}
+                        </div>
                     </div>
                 </div>
             </div>
