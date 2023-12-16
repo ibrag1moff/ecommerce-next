@@ -49,8 +49,13 @@ export default function ProductDetails() {
                     Go Back <BsArrowRight size={20} />
                 </Link>
             </div>
+<<<<<<< HEAD
             <div className="my-[60px]">
                 <div className="flex flex-col gap-8 items-center justify-center md:flex-row">
+=======
+            <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] mt-16">
+                <div className="flex flex-col items-center justify-center md:flex-row md:justify-between md:gap-36">
+>>>>>>> 5b41006cfc3196dfb6fb8290f7a0db84e8cdb7a6
                     <img
                         className="w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
                         src={image}
