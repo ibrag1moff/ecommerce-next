@@ -22,8 +22,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <Features />
             <Services />
+            <Features />
             <Categories />
             <Customers />
         </>

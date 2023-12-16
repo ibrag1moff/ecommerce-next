@@ -4,7 +4,7 @@ export default function About() {
             <div className="flex flex-col lg:flex-row  items-center gap-8 lg:pt-12">
                 <img
                     className="w-full lg:w-[700px] lg:h-[500px] object-cover"
-                    src="https://teamwork-interiors.com/wp-content/uploads/2018/12/TH-Zurich107.jpg"
+                    src="https://www.lux-review.com/wp-content/uploads/2020/10/fashion-store.jpg"
                     alt="AboutImg"
                 />
                 <div>
@@ -14,7 +14,7 @@ export default function About() {
                     <h1 className="font-bold text-center text-3xl mb-8 md:text-4xl">
                         Baku,Azerbaijan
                     </h1>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-center lg:text-left">
                         <div>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Itaque rem incidunt at odit expedita modi,

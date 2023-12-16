@@ -10,5 +10,5 @@
 }
 
 .navContainer {
-    @apply max-w-[1900px] py-4 px-3 sm:px-[120px] mx-auto;
+    @apply max-w-[1900px] px-3 sm:px-[120px] mx-auto;
 }

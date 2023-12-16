@@ -2,8 +2,30 @@
 import Link from "next/link";
 
 export default function Footer() {
+    const footerLinks = [
+        {
+            id: 1,
+            title: "home",
+            href: "/",
+        },
+        {
+            id: 2,
+            title: "about",
+            href: "/about",
+        },
+        {
+            id: 3,
+            title: "products",
+            href: "/products",
+        },
+        {
+            id: 4,
+            title: "feedback",
+            href: "/feedback",
+        },
+    ];
     return (
-        <div className="pt-20">
+        <div className="pt-20 mt-4">
             <div className="bg-footerImg bg-cover h-[65vh]">
                 <form className="flex flex-col md:flex-row md:px-12 items-center gap-8 justify-center pt-28">
                     <label
@@ -24,30 +46,15 @@ export default function Footer() {
             </div>
             <footer className="flex flex-col-reverse md:flex-row md:px-12 gap-12 py-4 items-center justify-between bg-[#151515] h-fit  text-white">
                 <div className="flex flex-col md:flex-row gap-8 text-center">
-                    <Link
-                        className="font-medium hover:underline text-2xl"
-                        href="/"
-                    >
-                        home
-                    </Link>
-                    <Link
-                        className="font-medium hover:underline text-2xl"
-                        href="/about"
-                    >
-                        about
-                    </Link>
-                    <Link
-                        className="font-medium hover:underline text-2xl"
-                        href="/products"
-                    >
-                        products
-                    </Link>
-                    <Link
-                        className="font-medium hover:underline text-2xl"
-                        href="/feedback"
-                    >
-                        feedback
-                    </Link>
+                    {footerLinks.map((link) => (
+                        <Link
+                            key={link.id}
+                            className="font-medium hover:underline text-2xl"
+                            href={link.href}
+                        >
+                            {link.title}
+                        </Link>
+                    ))}
                 </div>
                 <Link href="/" className="text-5xl uppercase font-sans">
                     fatima

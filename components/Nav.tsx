@@ -69,15 +69,8 @@ export default function Nav() {
             onClick={(e) => e.stopPropagation()}
         >
             <div className="flex items-center justify-between">
-                <Link
-                    className={
-                        navActive
-                            ? "uppercase font-bold text-2xl md:text-3xl font-second no-underline z-20 text-white"
-                            : "uppercase font-bold text-2xl md:text-3xl font-second no-underline text-black"
-                    }
-                    href="/"
-                >
-                    Fatima
+                <Link href="/">
+                    <img className="w-[80px]" src="/logo.png" alt="" />
                 </Link>
                 <div
                     className={

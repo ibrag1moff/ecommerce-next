@@ -29,7 +29,7 @@ export const useProduct = () => {
 export default function ProductContextProvider({
     children,
 }: ProductContextProps) {
-    const [products, setProducts] = useState<any[]>([]);
+    const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
         const fetchProducts = async () => {

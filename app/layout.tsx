@@ -5,14 +5,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 // font
-import { Open_Sans } from "next/font/google";
+import { Raleway } from "next/font/google";
 
 // components
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Providers from "./providers";
 
-const openSans = Open_Sans({ subsets: ["latin"] });
+const openSans = Raleway({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
     title: "FatimaShop",
